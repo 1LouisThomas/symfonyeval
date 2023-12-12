@@ -2,17 +2,21 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {% block stylesheets %}
-            {{ ux_controller_link_tags() }}
-        {% endblock %}
-
-        {% block javascripts %}
-{% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% endblock %}
+        <title>{% block title %}Page d'accueil!{% endblock %}</title>
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <nav>
+            <ul>
+                <li><a href="{{ asset('home') }}">Accueil</a></li>
+                <li><a href="{{ asset('video') }}">Vidéos</a></li>
+                <li><a href="{{ asset('chaine') }}">Chaines</a></li>
+                <li><a href="{{ asset('recherche') }}">Recherche</a></li>
+                <li><a href="{{ asset('ajouter') }}">Ajouter une chaine</a></li>
+                <li><a href="{{ asset('editer') }}">Éditer une chaine</a></li>
+            </ul>
+        </nav>
+        {% block body %}
+        
+        {% endblock %}
     </body>
 </html>
